@@ -206,7 +206,7 @@ function getAllowedDataTypes(dataSerializer) {
     case 'utf8':
       return ['String'];
     case 'urlencoded':
-      return ['Object'];
+      return ['Object', 'String'];
     default:
       return ['Array', 'Object'];
   }
