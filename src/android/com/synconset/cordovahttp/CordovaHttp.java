@@ -199,7 +199,8 @@ abstract class CordovaHttp {
       } else if ("utf8".equals(this.getSerializerName())) {
           request.send(this.getParamsMap().get("text").toString());
       } else {
-          request.form(this.getParamsMap());
+        //   request.form(this.getParamsMap());
+          request.send(this.getParamsObject().toString());
       }
     }
 
