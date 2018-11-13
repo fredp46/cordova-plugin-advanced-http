@@ -218,13 +218,7 @@ function getProcessedData(data, dataSerializer) {
   var currentDataType = getTypeOf(data);
   var allowedDataTypes = getAllowedDataTypes(dataSerializer);
 
-  if(currentDataType === 'String') {
-    try {
-      data = JSON.parse(data)
-    } catch(e) {
-      throw new Error(messages.DATA_TYPE_MISMATCH + ' ' + allowedDataTypes.join(', '));
-    }
-  } else if (allowedDataTypes.indexOf(currentDataType) === -1) {
+  if (allowedDataTypes.indexOf(currentDataType) === -1) {
     throw new Error(messages.DATA_TYPE_MISMATCH + ' ' + allowedDataTypes.join(', '));
   }
 
